@@ -2,18 +2,25 @@ const Transaction =require('./transaction')
 
 class Account {
   constructor() {
-    this.transaction = [];
+    this.transactions = [];
     this.balance = 0;
   }
 
   deposit(amount, date) {
     const transaction = new Transaction(date,amount, 'deposit');
-    this.transaction.push(transaction);
+    this.transactions.push(transaction);
     this.balance += amount;
   }
 
   getBalance() {
     return this.balance;
+  }
+
+
+  withdrawal(amount,date) {
+    const transaction = new Transaction(date,amount, 'withdrawal');
+    this.transactions.push(transaction);
+    this.balance -= amount;
   }
 }
 
