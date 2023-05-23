@@ -56,16 +56,15 @@ class Account
     # subtracts from balance
   end
 
-  def getTransaction
-    returns list
-  end
-
   def printStatment
 end
 
 class Transaction
   def initialize(date, amount, type) 
   end
+
+  def add
+   # adds transactions together
 
   def format
     # Returns a string of the form 'date || credit || debit || balance'

@@ -11,12 +11,13 @@ describe('Transaction', () => {
     account = new Account();
   });
 
-  test('it should add transactions made', () => {
+  test('it should display transactions made in reverse chronological order', () => {
     transaction.addTransaction('10-01-2023', 1000, 1000);
     transaction.addTransaction('13/01/2023', 2000.00, 3000.00);
     transaction.addTransaction('14/01/2023', 500.00, 2500.00);
     account.transactions = transaction;
   });
+
 });
 
 
