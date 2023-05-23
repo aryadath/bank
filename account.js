@@ -7,7 +7,7 @@ class Account {
   }
 
   deposit(amount, date) {
-    const transaction = new Transaction(date,amount, 'deposit',this.balance);
+    const transaction = new Transaction(date,amount, 'deposit',);
     this.transactions.push(transaction);
     this.balance += amount;
   }
@@ -18,9 +18,13 @@ class Account {
 
 
   withdrawal(amount,date) {
-    const transaction = new Transaction(date,amount, 'withdrawal', this.balance);
+    const transaction = new Transaction(date,amount, 'withdrawal', );
     this.transactions.push(transaction);
     this.balance -= amount;
+  }
+
+  getTransaction(amount,date) {
+    this.transactions = [];
   }
 }
 
