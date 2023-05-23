@@ -1,4 +1,4 @@
-const Transaction =require('./transaction')
+const Transaction = require('./transaction')
 
 class Account {
   constructor() {
@@ -7,7 +7,7 @@ class Account {
   }
 
   deposit(amount, date) {
-    const transaction = new Transaction(date,amount, 'deposit');
+    const transaction = new Transaction(date,amount, 'deposit',this.balance);
     this.transactions.push(transaction);
     this.balance += amount;
   }
@@ -18,7 +18,7 @@ class Account {
 
 
   withdrawal(amount,date) {
-    const transaction = new Transaction(date,amount, 'withdrawal');
+    const transaction = new Transaction(date,amount, 'withdrawal', this.balance);
     this.transactions.push(transaction);
     this.balance -= amount;
   }

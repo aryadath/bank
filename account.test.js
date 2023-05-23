@@ -1,5 +1,5 @@
-const Account = require('./account.js')
-const Transaction = require('./transaction.js');
+const Account = require('./account')
+const Transaction = require('./transaction');
 
 
 describe ('Account', () => {
@@ -20,9 +20,11 @@ describe ('Account', () => {
     expect(account.getBalance()).toEqual(3000);
   });
 
-  // test('A withdrawal and update balance', () => {
-  //   account.withdrawal(500, '14-01-2023');
-  //   expect(account.getBalance()).toBe(500);
-  // });
+  test('A withdrawal and update balance', () => {
+    account.deposit(1000, '10-01-2023')
+    account.deposit(2000, '13-01-2023');
+    account.withdrawal(500, '14-01-2023');
+    expect(account.getBalance()).toBe(2500);
+  });
 });
 
