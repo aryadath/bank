@@ -1,16 +1,20 @@
-User story:
-Specification
+Bank Account Statement
+This is a simple implementation of a bank account statement generator. It allows you to perform deposits, withdrawals, and view the account statement.
+
+
 Requirements
-You should be able to interact with your code via a REPL like IRB or Node. (You don't need to implement a command line interface that takes input from STDIN.)
-Deposits, withdrawal.
-Account statement (date, amount, balance) printing.
-Data can be kept in memory (it doesn't need to be stored to a database or anything).
-Acceptance criteria
-Given a client makes a deposit of 1000 on 10-01-2023
-And a deposit of 2000 on 13-01-2023
-And a withdrawal of 500 on 14-01-2023
-When she prints her bank statement
-Then she would see
+Interact with the code using a REPL like IRB or Node.
+Perform deposits and withdrawals.
+Print an account statement with the following columns: date, credit, debit, and balance.
+Data can be kept in memory, without the need for a database.
+Acceptance Criteria
+Given a client:
+
+Makes a deposit of 1000 on 10-01-2023.
+Makes a deposit of 2000 on 13-01-2023.
+Makes a withdrawal of 500 on 14-01-2023.
+When the client prints their bank statement, they should see:
+
 
 date || credit || debit || balance
 14/01/2023 || || 500.00 || 2500.00
@@ -26,7 +30,6 @@ date || credit || debit || balance
 │ - withdrawal(amount: float, date: str)                     
 │ - get balance (returns in date,balance)
   - get transaction(returns list)
-  -print statement (form: date, credit/debit, balance)
 └───────────┬────────────────┘
             │
             │ owns a list of
@@ -55,15 +58,14 @@ class Account
   def withdrawal
     # subtracts from balance
   end
+  end
 
-  def printStatment
-end
 
 class Transaction
   def initialize(date, amount, type) 
   end
 
-  def add
+  def addTransaction
    # adds transactions together
 
   def format
