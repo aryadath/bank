@@ -72,3 +72,6 @@ class Transaction
     # Returns a string of the form 'date || credit || debit || balance'
   end
 end
+
+
+Install Jest to run tests
