@@ -2,11 +2,7 @@ class Transaction {
   constructor() {
     this.transactions = [];
   }
-
-  // addTransaction(date, amount) {
-  //   const transaction = new Transaction(date, amount);
-  //   this.transactions.push(transaction);
-  // }
+  
   addTransaction(date, credit, debit, balance) {
     const transaction = {
       date: date,

@@ -15,14 +15,14 @@ class Account {
   getBalance() {
     return this.balance;
   }
-
-
-  withdrawal(amount,date) {
-    const transaction = new Transaction(date,amount, 'withdrawal', );
+  withdrawal(amount, date) {
+    if (amount > this.balance) {
+      throw new Error('Error, insufficient balance');
+    }
+    const transaction = new Transaction(date, amount, 'withdrawal');
     this.transactions.push(transaction);
     this.balance -= amount;
   }
-
 }
 
 module.exports = Account;
