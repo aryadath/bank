@@ -23,9 +23,6 @@ class Account {
     this.balance -= amount;
   }
 
-  getTransaction(amount,date) {
-    this.transactions = [];
-  }
 }
 
 module.exports = Account;

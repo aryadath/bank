@@ -3,18 +3,27 @@ class Transaction {
     this.transactions = [];
   }
 
-  addTransaction(date, amount) {
-    const transaction = new Transaction(date, amount);
+  // addTransaction(date, amount) {
+  //   const transaction = new Transaction(date, amount);
+  //   this.transactions.push(transaction);
+  // }
+  addTransaction(date, credit, debit, balance) {
+    const transaction = {
+      date: date,
+      credit: credit,
+      debit: debit,
+      balance: balance,
+    };
     this.transactions.push(transaction);
   }
 
-  // formatStatement() {
-  //   let statement = "date || credit || debit || balance\n";
-  //   for (const transaction of this.transactions) {
-  //     statement += `${transaction.date} || ${transaction.credit || ""} || ${transaction.debit || ""} || ${transaction.balance}\n`;
-  //   }
-  //   return statement;
-  // }
+  format() {
+    let printStatement = 'date || credit || debit || balance\n'
+    for (const transaction of this.transactions) {
+      printStatement += `${transaction.date } || ${transaction.credit||""} || ${transaction.debit||""} || ${transaction.balance}\n`;
+    }
+    return printStatement.trim();
+  }
 }
 
 module.exports = Transaction;
